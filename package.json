@@ -1,0 +1,26 @@
+{
+  "name": "node-vvpk-cli",
+  "version": "1.0.0",
+  "description": "Manage Valve Pak files from a command-line",
+  "author": "Matthew D <mpdtechpro@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^10.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "typescript": "^5.0.4"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": ["dist", "LICENSE", "package.json"],
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "bin": {
+    "node-vvpk": "./dist/index.js"
+  }
+}
