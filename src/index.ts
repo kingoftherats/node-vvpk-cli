@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import { createVpkCmd, extractVpkCmd, listCmd, pipeCmd, verifyCmd } from './commands';
+import { createVpkCmd, extractVpkCmd, listCmd, verifyCmd } from './commands';
 
 const pjson = require('../package.json');
 
@@ -32,12 +32,6 @@ program
     .argument('<dir>', 'Directory to extract VPK file to')
     .description('Extract a VPK file')
     .action(extractVpkCmd);
-
-program
-    .command('pipe')
-    .description('Extract VPK contents to console')
-    .argument('<vpk file>', 'Input VPK file path')
-    .action(pipeCmd);
 
 program
     .command('verify')
