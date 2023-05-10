@@ -25,7 +25,7 @@ export default (inputDirPath: string, outputFilePath: string, options: OptionVal
 
         let absOutputFilePath = outputFilePath;
         if (!path.isAbsolute(absOutputFilePath))
-        absOutputFilePath = path.join(process.cwd(), absOutputFilePath);
+            absOutputFilePath = path.join(process.cwd(), absOutputFilePath);
 
         const vpk: Vpk = Vpk.fromDirectory(absInputDirPath);
         vpk.setVersion(pakVer);

@@ -25,7 +25,7 @@ program
 program
     .command('create')
     .option('-pv, --pakver <version>', 'Target VPK version (1|2). Default is 2.')
-    .option('-no, --nodirs', 'Don\'t create parent directories')
+    .option('-nd, --nodirs', 'Don\'t create parent directories')
     .argument('<dir>', 'Directory to create VPK file from')
     .argument('<vpk file>', 'Output VPK file path')
     .description('Create a VPK file from a directory')
