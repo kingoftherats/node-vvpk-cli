@@ -1,5 +1,5 @@
 import { OptionValues, InvalidArgumentError } from 'commander';
-import Vpk from 'node-vvpk';
+import { Vpk } from 'node-vvpk';
 import path from 'path';
 import process from 'process';
 

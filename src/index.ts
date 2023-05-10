@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import { createVpkCmd, extractVpkCmd, listCmd, listAllCmd, pipeCmd, verifyCmd } from './commands';
+import { createVpkCmd, extractVpkCmd, listCmd, pipeCmd, verifyCmd } from './commands';
 
 const pjson = require('../package.json');
 
@@ -15,12 +15,6 @@ program
     .argument('<vpk file>', 'VPK file path')
     .description('List files within VPK')
     .action(listCmd);
-
-program
-    .command('listall')
-    .argument('<vpk file>', 'VPK file path')
-    .description('List files within VPK and VPK properties')
-    .action(listAllCmd);
 
 program
     .command('create')
