@@ -1,18 +1,20 @@
+import { OptionValues } from 'commander';
 import { Vpk, IndexEntry } from 'node-vvpk';
 import path from 'path';
 import process from 'process';
 
-export default (filePath: string): void => {
+export default (filePath: string, options: OptionValues): void => {
     let absFilePath = filePath;
     if (!path.isAbsolute(absFilePath))
         absFilePath = path.join(process.cwd(), absFilePath);
 
-    const index: IndexEntry[] = Vpk.indexFromFile(absFilePath);
-    if (index.length === 0) {
-        console.log('No issues found.')
-    } else {
-        index.forEach(entry => {
-            console.log(`${entry.relPath} CRC32:${entry.metadata.crc32.toString(16)} Bytes:${entry.metadata.fileLength}`);
-        });
-    }
+    let index: IndexEntry[] | undefined = undefined;
+    if (options.pathenc) 
+        index = Vpk.indexFromFile(absFilePath, options.pathenc);
+    else
+        index = Vpk.indexFromFile(absFilePath);
+
+    index.forEach(entry => {
+        console.log(`${entry.relPath} CRC32:${entry.metadata.crc32.toString(16)} Bytes:${entry.metadata.fileLength}`);
+    });
 }

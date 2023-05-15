@@ -29,7 +29,10 @@ export default (inputDirPath: string, outputFilePath: string, options: OptionVal
 
         const vpk: Vpk = Vpk.fromDirectory(absInputDirPath);
         vpk.setVersion(pakVer);
-        vpk.saveToFile(absOutputFilePath, (options.nodirs ? false : true));
+        if (options.pathenc)
+            vpk.saveToFile(absOutputFilePath, (options.nodirs ? false : true), options.pathenc);
+        else
+            vpk.saveToFile(absOutputFilePath, (options.nodirs ? false : true));
     } catch (e) {
         console.log(e);
     }

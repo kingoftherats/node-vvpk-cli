@@ -13,7 +13,12 @@ export default (inputFilePath: string, outputDirPath: string, options: OptionVal
         if (!path.isAbsolute(absOutputDirPath))
             absOutputDirPath = path.join(process.cwd(), absOutputDirPath);
 
-        const vpk: Vpk = Vpk.fromFile(absInputFilePath);
+        let vpk: Vpk | undefined = undefined;
+        if (options.pathenc)
+            vpk = Vpk.fromFile(absInputFilePath, options.pathenc);
+        else
+            vpk = Vpk.fromFile(absInputFilePath);
+
         vpk.extractToDirectory(absOutputDirPath, (options.nodirs ? false : true));
     } catch (e) {
         console.log(e);
