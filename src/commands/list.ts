@@ -8,7 +8,11 @@ export default (filePath: string): void => {
         absFilePath = path.join(process.cwd(), absFilePath);
 
     const index: IndexEntry[] = Vpk.indexFromFile(absFilePath);
-    index.forEach(entry => {
-        console.log(`${entry.relPath} CRC32:${entry.metadata.crc32.toString(16)} Bytes:${entry.metadata.fileLength}`);
-    });
+    if (index.length === 0) {
+        console.log('No issues found.')
+    } else {
+        index.forEach(entry => {
+            console.log(`${entry.relPath} CRC32:${entry.metadata.crc32.toString(16)} Bytes:${entry.metadata.fileLength}`);
+        });
+    }
 }
