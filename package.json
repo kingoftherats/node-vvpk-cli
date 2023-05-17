@@ -4,8 +4,10 @@
   "description": "Manage Valve Pak files from a command-line",
   "author": "Matthew D <mpdtechpro@gmail.com>",
   "license": "MIT",
+  "keywords": ["vpk", "valve"],
   "dependencies": {
-    "commander": "^10.0.1"
+    "commander": "^10.0.1",
+    "node-vvpk": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.16.2",
@@ -17,7 +19,12 @@
     "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": ["dist", "LICENSE", "package.json"],
+  "files": [
+    "dist",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
   "type": "commonjs",
   "main": "dist/index.js",
   "bin": {
