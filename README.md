@@ -13,7 +13,7 @@ npm install -g node-vvpk-cli
 
 ## Usage
 
-```sh
+```
 node-vvpk [options] [command]
 
 Options:
