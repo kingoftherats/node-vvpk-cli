@@ -13,18 +13,20 @@ npm install -g node-vvpk-cli
 
 ## Usage
 
-node-vvpk \[options\] \[command\]
+```sh
+node-vvpk [options] [command]
 
 Options:
   -v, --version     output the version number
   -h, --help        display help for command
 
 Commands:
-  list \[options] &lt;vpk file>               List files within VPK
-  create \[options] &lt;dir> &lt;vpk file>    Create a VPK file from a directory
-  extract \[options] &lt;vpk file> &lt;dir>   Extract a VPK file
-  verify \[options] &lt;vpk file>             Verify contents of a VPK
-  help \[command]                             display help for command
+  list [options] <vpk file>               List files within VPK
+  create [options] <dir> <vpk file>       Create a VPK file from a directory
+  extract [options] <vpk file> <dir>      Extract a VPK file
+  verify [options] <vpk file>             Verify contents of a VPK
+  help [command]                          display help for command
+```
 
 ## Examples
 
